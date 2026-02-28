@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play it</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Play it - Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,41 +15,47 @@
             <h4>Play</h4>
             <h4>❌⭕❌</h4>
         </div>
-        <!-- Links to navigate different sections of the website -->
         <div class="navLinks">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
             <a href="#gameArea">GameArea</a>
+            <a href="#about">About</a>
         </div>
     </nav>
+
     <main>
+        <!-- Home Section -->
         <div class="home" id="home">
             <section id="welcomeArea">
-                <h1 style="text-align: center;">Welcome to Play ❌⭕❌</h1>
-                <p style="text-align: center;">Your ultimate destination for playing Tic Tac Toe!</p>
+                <h1>Welcome to Play ❌⭕❌</h1>
+                <p>Your ultimate destination for playing Tic Tac Toe!</p>
             </section>
         </div>
+
+        <!-- Game Area Section -->
         <div class="gameArea" id="gameArea">
             <section id="gameSection">
-                <h2>Tic Tac Toe Game Area</h2>
-                <p>Get ready to challenge yourself and have fun!</p>
+                <h2>Tic Tac Toe</h2>
+                <p>Can you beat your opponent?</p>
+
                 <div id="gameBoard">
-                    <!-- Game board will be dynamically generated here -->  
+                    <!-- Grid cells created by JS -->
                 </div>
-                <div id="gameStatus">
-                    <!-- Game status messages will be displayed here -->
-                </div>
+
+                <div id="gameStatus">Player X's Turn</div>
+
                 <button id="resetButton">Reset Game</button>
-                
             </section>
         </div>
     </main>
+
+    <!-- About Section -->
     <div class="about" id="about">
         <h2>About Play it</h2>
-        <p>Play it is a simple and fun platform where you can play Tic Tac Toe against
-            friends or the computer. Enjoy endless hours of entertainment!</p>
-
+        <p>Play it is a simple and fun platform designed for fans of classic board games.
+            This version of Tic Tac Toe allows two players to battle it out on the same device.
+            Challenge your friends and see who is the ultimate strategist!</p>
     </div>
+
     <script src="script.js"></script>
 </body>
 

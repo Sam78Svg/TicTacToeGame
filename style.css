@@ -3,42 +3,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: lightgoldenrodyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdfcf0;
+    color: #333;
 }
 
 /* Navigation Bar */
-
 nav {
     display: flex;
-    padding: 5px;
-    margin-top: 5px;
+    padding: 5px 20px;
     width: 100%;
-    height: 4rem;
-    border-bottom: 2px solid black;
+    height: 4.5rem;
+    border-bottom: 2px solid #2c3e50;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
 }
 
 .logo {
-    width: 15%;
-    font-size: 19px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.logo h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
 }
 
 .navLinks {
-    width: 100%;
+    flex-grow: 1;
     display: flex;
-    padding: 0 15px;
-    align-items: center;
-    justify-content: right;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
 .navLinks a {
     text-decoration: none;
-    margin-right: 1rem;
-    font-size: 19px;
+    color: #3B4371;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navLinks a:hover {
+    color: #F3904F;
 }
 
 /* Main Area */
@@ -48,25 +64,155 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F3904F;
-    background: -webkit-linear-gradient(to right, #3B4371, #F3904F);
     background: linear-gradient(to right, #3B4371, #F3904F);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
+#welcomeArea h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#welcomeArea p {
+    font-size: 1.5rem;
+    opacity: 0.9;
 }
 
 /* GameArea Section */
 .gameArea {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background: #bdc3c7;
-    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
-    background: linear-gradient(to right, #2c3e50, #bdc3c7);
     justify-content: center;
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    padding: 40px 20px;
+}
+
+#gameSection {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+#gameSection h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#gameSection p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Tic Tac Toe Grid */
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cell:hover {
+    background: #e0e6e8;
+    transform: scale(1.02);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+/* Game Status and Buttons */
+#gameStatus {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    height: 30px;
+    color: #2c3e50;
+}
+
+#resetButton {
+    padding: 12px 30px;
+    font-size: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#resetButton:hover {
+    background-color: #34495e;
 }
 
 /* About Section */
 .about {
-    height: 100vh;
-    padding: 1rem 2rem;
+    min-height: 50vh;
+    padding: 4rem 2rem;
+    background: #fdfcf0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3B4371;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    #gameBoard {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    #welcomeArea h1 {
+        font-size: 2.2rem;
+    }
 }
